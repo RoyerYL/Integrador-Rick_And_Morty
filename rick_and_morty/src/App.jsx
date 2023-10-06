@@ -68,7 +68,6 @@ function App() {
       <div className={pathname=='/'? style.login:style.app}>
 
          {pathname!='/' && <Nav onSearch={onSearch}/>}
-         {pathname!='/'  && <button className={style.boton} onClick={()=>onSearch(id)}>Agregar</button> }
          
       <div className={pathname=='/home'? style.home:style.detail}>
          
