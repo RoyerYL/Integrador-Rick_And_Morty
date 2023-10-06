@@ -46,7 +46,7 @@ export default function Favorites(props) {
                     status={charcter.status}
                     species={charcter.species} 
                     gender={charcter.gender} 
-                    origin={charcter.origin.name} 
+                  //   origin={charcter.origin.name} 
                     image={charcter.image} 
                     />
             )})}

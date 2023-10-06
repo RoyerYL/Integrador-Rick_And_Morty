@@ -17,17 +17,3 @@
 
 
 }
-button{
-    text-decoration: none !important;
-    height: 2em;
-    display: flex;
-    align-items: center;
-    border: none;
-    border-radius: 10%;
-    color: gray;
-    background-color: white;
-}
-button:hover{
-    background-color: gray;
-    color: white;
-}

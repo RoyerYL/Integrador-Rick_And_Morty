@@ -14,20 +14,7 @@ span{
     color: red;
     font-size: 12px;
 }
-button{
-    border: none;
-    border-radius: 15%;
 
-    cursor: pointer;
-    transition: trasform 0.2s;
-}
-button:hover{
-    background-color: grey;
-    color: white;
-}
-button:active{
-    transform: scale(1.1);
-}
 .botonLogin{
     display: flex;
     width: 100%;

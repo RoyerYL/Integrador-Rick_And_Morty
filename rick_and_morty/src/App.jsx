@@ -15,6 +15,7 @@ import Packs from './components/Packs'
 function App() {
 
    const [characters,setCharacters] = useState([])
+   const [packCharacters,setPackCharacters] = useState([])
    const {pathname} =useLocation();
    const navigate = useNavigate();
    const [access,setAccess] = useState(false)
@@ -49,23 +50,49 @@ function App() {
       else{
          alert("Personaje ya agregado")
       }
-      
    }
-   function onClose(id) {
-      setCharacters(characters.filter((character)=>{return character.id !== Number(id)}))
-      
-   }
-   
-   useEffect(() => {
 
-      !access && navigate('/');
+   function handleClick(id) {
+      setPackCharacters([])
+      for (let i = 0; i < 5; i++) {
+         let id=Math.round(Math.random()*826);
+         characters.forEach(element => {
+            if(element.id==id)
+            {
+               repetido=true;
+            }
+            
+         });
+         axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+            if (data.name) {
+               setPackCharacters((oldChars) => [...oldChars, data]);
+            } else {
+               window.alert('¡No hay personajes con este ID!');
+            }
+         });}
+      
+      }
+
+         
+
+
+
+      
+      function onClose(id) {
+         setCharacters(characters.filter((character)=>{return character.id !== Number(id)}))
+         
+      }
+      
+      useEffect(() => {
+         
+         !access && navigate('/');
       }, [access]);
-
-
-
-
-   return (
-      <div className={pathname=='/'? style.login:style.app}>
+      
+      
+      
+      
+      return (
+         <div className={pathname=='/'? style.login:style.app}>
 
          {pathname!='/' && <Nav onSearch={onSearch}/>}
          
@@ -77,7 +104,7 @@ function App() {
          <Route path='/home' element={<Cards characters={characters} onClose={onClose} />}/>
          <Route path='/favorites' element={<Favorites onClose={onClose} />}/>      
          <Route path='/about' element={<About />}/>
-         <Route path='/packs' element={<Packs />}/>
+         <Route path='/packs' element={<Packs  charactersPack={packCharacters} handleClick={handleClick}/>}/>
          <Route path='/detail/:id' element={<Detail />}/>
          
       </Routes>
@@ -88,6 +115,8 @@ function App() {
 
       </div>
    );
+   
 }
-
-export default App;
+   
+   export default App;
+   
