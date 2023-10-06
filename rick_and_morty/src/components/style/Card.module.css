@@ -1,0 +1,71 @@
+h2{
+    font-size: medium;
+}
+.perfil{
+    display: flex;
+    align-items: center;
+    height: 300px;
+    width: 300px;
+    position: relative;
+    justify-content: center;
+}
+.cros{
+    position: absolute;
+    top:0px;
+    right: 0px;
+    border: none;
+}
+.cros:hover{
+    background-color: red;
+}
+.detail{
+    position: relative;
+}
+.name{
+    
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px 10px 0px 10px;
+    display: flex;
+    justify-content: center;
+    font-size: large;
+    border-bottom: 2px solid rgb(75 , 255, 4);
+}
+.info{
+    gap: 10px;
+}
+.card{
+    background-color: rgba(75, 255, 4, 0.753);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 3px;
+    height: 400px;
+    width: 300px;
+    border: 2px solid rgb(75, 255, 4);
+    box-shadow: 0 0 50px 15px rgba(53, 209, 39, 0.75);
+    border-radius: 10% 0% 10% 10%;
+    overflow: hidden;
+    
+}
+.card:hover{
+    transition: transform 0.7s;
+    transform: scale(1.1);
+    border: 2px solid rgb(255, 4, 4);
+    box-shadow: 0 0 50px 15px rgba(209, 39, 39, 0.85);
+    background-color: rgba(255, 4, 4, 0.753);
+
+
+}
+
+.info{
+    display: flex;
+    justify-content: space-around;
+}
+.origin{
+    display: flex;
+    justify-content: center;
+    margin: 2px;
+}

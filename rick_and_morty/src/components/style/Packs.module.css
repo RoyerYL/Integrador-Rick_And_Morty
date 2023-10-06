@@ -1,0 +1,50 @@
+.panel{
+    height: 100%;
+    width: 100%;
+    margin:25px;
+/* display: flex;
+flex-direction: column;
+gap: 25px; */
+}
+/* ------------------------------- */
+
+.pack
+{
+    position: relative;
+    top: 50px;
+    margin: 10px;
+
+    /* position: absolute; */
+    width: 100px;
+    height: 150px;
+    background-color: blue;
+}
+
+
+.image:hover{
+    transition: transform 0.7s;
+    transform: scale(1.1);
+}
+
+
+.image{
+width: 100%;
+height: 100%;
+}
+
+/* ------------------------------- */
+.packs{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    overflow-y: auto;
+ 
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: red;    
+}

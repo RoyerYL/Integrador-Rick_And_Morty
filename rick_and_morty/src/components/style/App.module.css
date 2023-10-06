@@ -1,0 +1,27 @@
+.app{
+    display: flex;
+    flex-direction: column;
+}
+.login{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to bottom right,rgb(44, 201, 44),rgb(255, 255, 255),rgb(44, 201, 44));
+
+    height: 100vh;
+    width: 100%;
+}
+body{
+    width: 100%;
+}
+:root{
+    height: 100%;
+    width: 100%;
+}
+.detail{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    
+}

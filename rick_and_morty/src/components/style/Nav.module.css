@@ -1,0 +1,33 @@
+.nav{
+    background-color:#a147ce;
+    height: 4em;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.navegacionButtons{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+
+
+}
+button{
+    text-decoration: none !important;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 10%;
+    color: gray;
+    background-color: white;
+}
+button:hover{
+    background-color: gray;
+    color: white;
+}

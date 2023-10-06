@@ -1,0 +1,19 @@
+.logo{
+    height: 250px;
+    width: 250px;
+    border: 8px solid rgb(154, 198, 64,0.55);
+    box-shadow: inset 0 0 100px 5px rgba(154, 198, 64, 0.801);
+    border-radius: 50%;
+}
+.login{
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 50px;
+    margin: 100px;
+    border-radius: 50%;
+    border: 8px solid rgba(61, 59, 58, 0.55);
+    box-shadow:inset 0 0 100px 5px rgba(0, 0, 0, 0.801);
+
+}
