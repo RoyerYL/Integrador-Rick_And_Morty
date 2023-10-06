@@ -10,26 +10,19 @@ export default function Card(props) {
 
    const [isFav,setIsFav]=useState(false)
 
-   useEffect(() => {
-      myFavorites.forEach((fav) => {
-         if (fav.id === props.id) {
-            setIsFav(true);
-         }
-      });
-   }, [myFavorites]);
-
-const handleFavorite=()=>{
-   if(isFav){
-      setIsFav(false)
    
-      dispatch(remove_fav(props.id))
-   }
-   if(!isFav){
-      setIsFav(true)
+  useEffect(() => {
+   myFavorites.forEach((fav) => {
+     if (fav.id === props.id) {
+       setIsFav(true);
+     }
+   });
+ }, [myFavorites]);
 
-      dispatch(add_fav(props))
-   }
-}
+   const handleFavorite = () => {
+      isFav ? dispatch(remove_fav(props.id)) : dispatch(add_fav(props));
+      setIsFav(!isFav);
+    };
 // className={index===characters.length-1? estilos[randomIndex]:style.aparecerScaleRotation}
    return (
       <>

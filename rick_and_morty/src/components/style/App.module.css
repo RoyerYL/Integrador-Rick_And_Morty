@@ -25,3 +25,40 @@ body{
     height: 100%;
     
 }
+
+#root {
+    height: 100%;
+    margin: 0 ;
+    padding: 0;
+    text-align: center;
+  }
+  
+  
+  button{
+    text-decoration: none !important;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    border: none;
+  
+    color: gray;
+    background-color: white;
+  
+    border-radius: 15%;
+    
+    cursor: pointer;
+    transition: trasform 0.2s;
+  }
+  button:hover{
+    background-color: gray;
+    color: white;
+  }
+  button{
+  }
+  button:hover{
+    background-color: grey;
+    color: white;
+  }
+  button:active{
+    transform: scale(1.1);
+  }

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { add_fav, filterCards, orderCards, remove_fav } from '../redux/action';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import Cards from './Cards';
 export default function Favorites(props) {
 
    const myFavorites=useSelector((state)=>state.myFavorites);
@@ -21,35 +22,28 @@ export default function Favorites(props) {
       dispatch(filterCards(e.target.value));
     };
 
-   return (<div className={style.cards}>
+   return (
+   <div className={style.myFavorites}>
       
-      
-      <select onChange={handleOrder}>
-        <option value="A">Ascendente</option>
-        <option value="D">Descendente</option>
-      </select>
+      <div className=''>
+        <select onChange={handleOrder}>
+          <option value="A">Ascendente</option>
+          <option value="D">Descendente</option>
+        </select>
 
-      <select onChange={handleFilter}>
-        <option value="ALL">All</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="Genderless">Genderless</option>
-        <option value="unknown">Unknown</option>
-      </select>
-
-         {myFavorites.map((charcter,index)=>{return(
-                <Card 
-                
-                    key={charcter.id} //importante añdir unna KEY
-                    id={charcter.id}
-                    name={charcter.name} 
-                    status={charcter.status}
-                    species={charcter.species} 
-                    gender={charcter.gender} 
-                  //   origin={charcter.origin.name} 
-                    image={charcter.image} 
-                    />
-            )})}
+        <select onChange={handleFilter}>
+          <option value="ALL">All</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Genderless">Genderless</option>
+          <option value="unknown">Unknown</option>
+        </select>
       </div>
+
+      <div>
+        <Cards characters={myFavorites}  />
+      </div>
+         
+    </div>
    );
 }

@@ -59,3 +59,10 @@
       transform: rotate(360deg); /* Rotación final: 360 grados (una vuelta completa) */
     }
   }
+
+  .myFavorites{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;  
+    align-items: center;
+  }
