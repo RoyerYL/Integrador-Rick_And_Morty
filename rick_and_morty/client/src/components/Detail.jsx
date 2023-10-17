@@ -28,23 +28,22 @@ export default function  Detail() {
 
     <div className={style.detail}>
       
-      <div>
-
-      </div>
-        <div className={style.divImg}>
+      <div className={style.detailCard}>
+      <Link to={"/"}>
+         <button className={style.back}>↩</button>
+         </Link>
+         <div className={style.divImg}>
             <img className={style.imagen} src={character.image} alt='' />   
             <h2 className={style.name}>{character.name}</h2>
          </div>
 
          <div >
-            <h2 >{character.origin?.name}</h2>   
-            <h2>{character.status}</h2>
-            <h2>{character.species}</h2>
-            <h2>{character.gender}</h2>
+            <h2 >Origen: {character.origin?.name}</h2>   
+            <h2>Estado: {character.status}</h2>
+            <h2>Especie: {character.species}</h2>
+            <h2>Genero: {character.gender}</h2>
          </div>
-         <div>
-            
-         </div>
+      </div>
     </div>
     
  )
