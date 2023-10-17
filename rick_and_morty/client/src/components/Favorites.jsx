@@ -2,27 +2,27 @@ import { useDispatch } from 'react-redux';
 import style from './style/Cards.module.css'
 import Card from './Card';
 
-import { Link } from 'react-router-dom';
 import { add_fav, filterCards, orderCards, remove_fav } from '../redux/action';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Cards from './Cards';
 export default function Favorites(props) {
+  //redux
+  const myFavorites=Array.from(useSelector((state)=>state.myFavorites));
+  const dispatch = useDispatch();
 
-   const myFavorites=useSelector((state)=>state.myFavorites);
-   const [aux, setAux] = useState(false);
-   const dispatch = useDispatch();
+  const [aux, setAux] = useState(false);
 
-   const handleOrder = (e) => {
+  const handleOrder = (e) => {
       dispatch(orderCards(e.target.value));
       setAux(!aux);
     };
   
-    const handleFilter = (e) => {
+  const handleFilter = (e) => {
       dispatch(filterCards(e.target.value));
     };
 
-   return (
+  return (
   <div className={style.containerFavorites}>
    <div className={style.myFavorites}>
       
