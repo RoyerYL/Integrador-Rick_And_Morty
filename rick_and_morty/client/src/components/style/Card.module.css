@@ -14,9 +14,19 @@ h2{
     top:0px;
     right: 0px;
     border: none;
+    height: 2em;
+    width: 2em;
+    background-image: url("../../img/trash.png");
+    background-position: center;
+    background-size: contain;
+    font-size: 0.75em;
 }
 .cros:hover{
     background-color: red;
+}
+.heart{
+    height: 2em;
+    width: 2em;
 }
 .detail{
     position: relative;

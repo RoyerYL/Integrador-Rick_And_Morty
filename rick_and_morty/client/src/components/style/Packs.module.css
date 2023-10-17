@@ -1,7 +1,6 @@
 .panel{
     height: 100%;
     width: 100%;
-    margin:25px;
 /* display: flex;
 flex-direction: column;
 gap: 25px; */
@@ -13,14 +12,18 @@ gap: 25px; */
     position: relative;
     top: 50px;
     margin: 10px;
-
     /* position: absolute; */
     width: 100px;
     height: 150px;
 
-    
 }
+.containerPacks{
+    margin-top: 64px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 
+}
 
 .image:hover{
     transition: transform 0.7s;
@@ -55,13 +58,8 @@ gap: 25px; */
     flex-direction: column;
     flex-wrap: wrap;
     align-content: flex-start;
-
-
     margin: 15px;
     padding: 30px;
-
-    background-color:  rgba(139, 146, 139, 0.5);
-    border-radius: 25%;
 }
 
 @keyframes rotateShadow {
@@ -78,4 +76,12 @@ gap: 25px; */
         box-shadow: 0 0 30px 25px rgba(221, 235, 103, 0.9);
 
     }
+}
+.botonAdd{
+    position: absolute;
+    top: 0px;
+    right: 50%
+}
+.cardsPack{
+    scale: 0.7;
 }

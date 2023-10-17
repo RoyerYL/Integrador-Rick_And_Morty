@@ -19,12 +19,6 @@ body{
     height: 100%;
     width: 100%;
 }
-.detail{
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    
-}
 
 #root {
     height: 100%;
@@ -53,12 +47,8 @@ body{
     background-color: gray;
     color: white;
   }
-  button{
-  }
-  button:hover{
-    background-color: grey;
-    color: white;
-  }
+
+ 
   button:active{
     transform: scale(1.1);
   }

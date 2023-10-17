@@ -75,12 +75,12 @@ function App() {
       
       }
       
-      function onClose(id) {
+   function onClose(id) {
          setCharacters(characters.filter((character)=>{return character.id !== Number(id)}))
          
       }
       
-      useEffect(() => {
+   useEffect(() => {
          
          !access && navigate('/');
       }, [access]);
@@ -88,9 +88,10 @@ function App() {
       return (
          <div className={pathname=='/'? style.login:style.app}>
 
-         {pathname!='/' && <Nav onSearch={onSearch}/>}
+         {pathname!='/' && 
+         <Nav onSearch={onSearch}/>}
          
-      <div className={pathname=='/home'? style.home:style.detail}>
+     
          
       <Routes>
          
@@ -103,7 +104,7 @@ function App() {
          
       </Routes>
 
-      </div>
+      
       
 
 

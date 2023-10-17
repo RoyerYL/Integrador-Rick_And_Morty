@@ -28,7 +28,7 @@ export default function Card(props) {
       <>
       <div className={`${style.card} ${props.clase}`} >
          <div className={style.perfil}>
-            <button className={style.cros} onClick={()=>{props.onClose(props.id)}}>X</button>
+            <button className={style.cros} onClick={()=>{props.onClose(props.id)}}> </button>
             <img src={props.image} alt='' />   
 
          </div>
@@ -46,9 +46,10 @@ export default function Card(props) {
             <h2>{props.status}</h2>
             <h2>{props.species}</h2>
             <h2>{props.gender}</h2>
-            {isFav?(<button onClick={handleFavorite}>❤️</button>) 
+            {isFav?
+            (<button className={style.heart} onClick={handleFavorite}>❤️</button>) 
             :
-            (<button onClick={handleFavorite}>🤍</button>)}
+            (<button className={style.heart} onClick={handleFavorite}>🤍</button>)}
          </div>
          </div>
       </div>

@@ -17,26 +17,30 @@ export default function Cards(props) {
        
 
 
- return <div className={style.cards} >
-   {
-      characters.map((charcter,index)=>
-      {return(
-         <div 
-            key={charcter.id} //importante añdir unna KEY
-         >
+ return <div className={style.cardsContainer}>
 
-         <Card
-         clase= {index===characters.length-1? estilos[randomIndex]:style.aparecerScaleRotation}
-         id={charcter.id}
-         name={charcter.name} 
-         status={charcter.status}
-         species={charcter.species} 
-         gender={charcter.gender} 
-         origin={charcter.origin.name} 
-         image={charcter.image} 
-         onClose={onClose}/>
-         </div>
-      )})
-   }
-   </div>;
+      <div className={style.cards} >
+      {
+         characters.map((charcter,index)=>
+         {return(
+            <div 
+               key={charcter.id} //importante añdir unna KEY
+            >
+
+            <Card
+            clase= {index===characters.length-1? estilos[randomIndex]:style.aparecerScaleRotation}
+            id={charcter.id}
+            name={charcter.name} 
+            status={charcter.status}
+            species={charcter.species} 
+            gender={charcter.gender} 
+            origin={charcter.origin.name} 
+            image={charcter.image} 
+            onClose={onClose}/>
+            </div>
+         )})
+      }
+      </div>;
+   </div>
+
 }

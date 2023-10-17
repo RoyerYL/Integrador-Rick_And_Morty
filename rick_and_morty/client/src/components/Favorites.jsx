@@ -23,6 +23,7 @@ export default function Favorites(props) {
     };
 
    return (
+  <div className={style.containerFavorites}>
    <div className={style.myFavorites}>
       
       <div className=''>
@@ -45,5 +46,7 @@ export default function Favorites(props) {
       </div>
          
     </div>
+   </div>
+
    );
 }

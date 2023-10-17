@@ -14,21 +14,28 @@ const addPack=()=>{
 
   return (
     <div className={style.panel}>
-      <button className={style.botonAdd} onClick={addPack}>+ pack</button>
-    
-      <div className={style.packs} >
-        {packs.map((aux,index)=>
-        {return(
+      
+    <div className={style.containerPacks}>
+      
+
+        <button className={style.botonAdd} onClick={addPack}>+ pack</button>
+      
+        <div className={style.packs} >
+          {packs.map((aux,index)=>
+          {return(
             <Pack key={index} handleClick={handleClick}/>
             )})
-            }
-      </div>
+          }
+        </div>
 
-      <div>
-        <Cards characters={charactersPack}  />
-      </div>
+        <div className={style.cardsPack}>
+          <Cards characters={charactersPack}  />
+        </div>
 
+    
+      
     </div>
+</div>
 )
 }
 
