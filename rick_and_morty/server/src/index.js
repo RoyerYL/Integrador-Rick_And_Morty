@@ -1,7 +1,7 @@
 const http = require('http');
 const {data} = require("./utils/data");
 const fs =require('fs');
-
+const {getCharById}=require('./controllers/getCharById')
 function encontrarObjetoPorId(array, id) {
     for (let i = 0; i < array.length; i++) {
 
@@ -27,10 +27,11 @@ http.createServer((req,res)=>{
 
     switch (url) {
         case "/rickandmorty/character":
- 
-            res.writeHead(200,{"Content-Type":"application/json"})
+            getCharById(res,id);
+
+            // res.writeHead(200,{"Content-Type":"application/json"})
             
-            res.end(JSON.stringify(encontrarObjetoPorId(data, id)))
+            // res.end(JSON.stringify(encontrarObjetoPorId(data, id)))
             break;
 
         default:
