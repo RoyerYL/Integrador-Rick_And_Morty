@@ -1,0 +1,28 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  },
+
+  "nodemonConfig": {
+    "watch": ["src"],
+    "ext": "js,json",
+    "exec": "node",
+    "ignore": ["test/*"],
+    "delay": 2,
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "verbose": true
+  }
+  
+}
