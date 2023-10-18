@@ -15,7 +15,17 @@ export default function Cards(props) {
       const randomIndex = Math.floor(Math.random() * estilos.length);
 
        
-
+const background =(especie)=>{
+   switch (especie) {
+      case "Human":
+         return style.human;
+      case "Alien":
+         return style.alien;
+   
+      default:
+         return style.default;
+   }
+}
 
  return <div className={style.cardsContainer}>
 
@@ -28,7 +38,7 @@ export default function Cards(props) {
             >
 
             <Card
-            clase= {index===characters.length-1? estilos[randomIndex]:style.aparecerScaleRotation}
+            clase= {background(charcter.species)}
             id={charcter.id}
             name={charcter.name} 
             status={charcter.status}

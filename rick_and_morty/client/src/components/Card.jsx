@@ -32,11 +32,11 @@ useEffect(() => {
       <>
       <div className={`${style.card} ${props.clase}`} >
          <div className={style.perfil}>
-            {pathname=='/home' &&<button className={style.cros} onClick={()=>{props.onClose(props.id)}}> </button>}
             <img src={props.image} alt='' />   
 
          </div>
          <div className={style.detail}>
+            {pathname=='/home' &&<button className={style.cros} onClick={()=>{props.onClose(props.id)}}>❌</button>}
          <div>
             <Link to={`/detail/${props.id}`}>      
             <h2 className={style.name}>{props.name}</h2>
