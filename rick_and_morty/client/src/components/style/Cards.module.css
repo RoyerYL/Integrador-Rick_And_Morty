@@ -92,3 +92,15 @@
     box-shadow: 0 0 50px 15px rgba(209, 39, 39, 0.75);
 
 }
+.cardsPack{
+  display: flex;
+  flex-direction: row;
+  scale: 0.7;
+  justify-content: center;
+  position: absolute;
+  
+
+left: 0px;
+right: 0px;
+
+}

@@ -8,7 +8,7 @@ export default function Card(props) {
        <div className={style.nav}>
          <div className={style.navegacionButtons}>
          <Link to={"/home"}>
-         <button>Home</button>
+         <button className={style.botones}>Home</button>
          </Link>
 
          <Link to={"/about"}>

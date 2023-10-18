@@ -29,16 +29,14 @@ body{
   
   
   button{
-    text-decoration: none !important;
     height: 2em;
     display: flex;
     align-items: center;
     border: none;
-  
     color: gray;
     background-color: white;
-  
-    border-radius: 15%;
+    border-radius: 10px;
+    font-size: 1em;
     
     cursor: pointer;
     transition: trasform 0.2s;
@@ -46,9 +44,16 @@ body{
   button:hover{
     background-color: gray;
     color: white;
+    scale: 1.1;
+    border-top: 2px solid rgb(43, 43, 43);
+    border-left: 2px solid rgb(43, 43, 43);
   }
 
  
   button:active{
-    transform: scale(1.1);
+    transform: scale(0.9);
+    border: none;
+  }
+  a{
+    text-decoration: none;
   }

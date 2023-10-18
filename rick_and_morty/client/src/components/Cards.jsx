@@ -1,9 +1,11 @@
 import style from './style/Cards.module.css'
 import Card from './Card';
-
+import { useLocation } from 'react-router-dom';
 
 export default function Cards(props) {
-  const {characters,onClose}=props;//array
+   const {pathname} =useLocation();
+   
+   const {characters,onClose}=props;//array
   
 
       const estilos = [
@@ -26,10 +28,15 @@ const background =(especie)=>{
          return style.default;
    }
 }
+const home=()=>{
+   if(pathname==='/home'){
+      return style.cards;
+   }
+   return style.cardsPack 
+}
+ return <div className={`${style.cadrsContainer}`}>
 
- return <div className={style.cardsContainer}>
-
-      <div className={style.cards} >
+      <div className={home()} >
       {
          characters.map((charcter,index)=>
          {return(
