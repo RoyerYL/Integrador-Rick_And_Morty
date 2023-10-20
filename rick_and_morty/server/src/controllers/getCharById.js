@@ -17,7 +17,7 @@ const getCharById=(res,id)=>{
         })
         .catch((error)=>{
             res.writeHead(500,{"Content-Type":"text/plain"})
-            res.end(error.message)
+            res.end(error.response.data.error)
         })
 }
 
