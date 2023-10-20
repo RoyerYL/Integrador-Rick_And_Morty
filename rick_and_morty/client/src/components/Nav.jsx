@@ -8,24 +8,24 @@ export default function Card(props) {
        <div className={style.nav}>
          <div className={style.navegacionButtons}>
          <Link to={"/home"}>
-         <button className={style.botones}>Home</button>
+         <button className={style.botones}>🏠 Home</button>
          </Link>
 
          <Link to={"/about"}>
-         <button >About</button>            
+         <button >❗ About</button>            
          </Link>
 
          <Link to={"/"}>
-         <button>Logout</button>
+         <button>🚪 Logout</button>
          </Link>
 
          <Link to={"/favorites"}>
-         <button>My favorites</button>
+         <button>❤️ My favorites</button>
          </Link>
       
 
          <Link to={"/packs"}>
-         <button>Packs</button>
+         <button>🎴 Packs</button>
          </Link>
 
          </div>

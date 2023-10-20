@@ -10,7 +10,7 @@ h2{
 }
 .cros{
     position: absolute;
-    top: 5px;
+    bottom: 50%;
     left: 5px;
     height: 2em;
     width: 2em;
@@ -26,7 +26,7 @@ h2{
     height: 2em;
     width: 2em;
     position: absolute;
-    top:5px;
+    bottom: 50%;
     right: 5px;
     justify-content: center;
 
