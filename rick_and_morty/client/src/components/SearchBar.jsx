@@ -16,8 +16,8 @@ const handleChange=(evento)=>{
    return (
       <div className={style.searchBar}>
          <input className={style.input} type='search' onChange={handleChange} />
-         <button className={style.boton} onClick={()=>onSearch(id)}>➕ Agregar</button>
-         <button className={style.boton} onClick={()=>onSearch(Math.round(Math.random()*826))}>🔀 Random</button>
+         <button className={style.boton} onClick={()=>onSearch(id)}>🔎</button>
+         <button className={style.boton} onClick={()=>onSearch(Math.round(Math.random()*826))}>🔀</button>
       </div>
    );
 }

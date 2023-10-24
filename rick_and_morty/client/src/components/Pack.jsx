@@ -1,5 +1,6 @@
 import React from 'react'
 import style from './style/Packs.module.css'
+import {imagesSobres} from './constantes/Images'
 
 const Packs = (props) => {
   const {handleClick}=props;
@@ -17,7 +18,7 @@ const rarezaBack=(rearezas)=>{
 
   return (      
       <div onClick={()=>handleClick()} className={style.pack}>
-        <img className={`${style.image} ${rarezaBack(props.rareza)}`} src="https://es.web.img3.acsta.net/pictures/18/10/31/17/34/2348073.jpg" alt="" />
+        <img className={`${style.image} ${rarezaBack(props.rareza)}`} src={imagesSobres} alt="" />
       </div>
 )
 }

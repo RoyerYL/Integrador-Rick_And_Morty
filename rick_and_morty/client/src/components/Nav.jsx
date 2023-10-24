@@ -7,27 +7,27 @@ export default function Card(props) {
       
        <div className={style.nav}>
          <div className={style.navegacionButtons}>
-         <Link to={"/home"}>
-         <button className={style.botones}>🏠 Home</button>
-         </Link>
+               
+            <Link to={"/"}>
+            <button className={style.iconoButton} title='Logout'>🚪</button>
+            </Link>
 
-         <Link to={"/about"}>
-         <button >❗ About</button>            
-         </Link>
+            <Link to={"/home"}>
+            <button className={style.botones} title='Home'>🏠 Home</button>
+            </Link>
 
-         <Link to={"/"}>
-         <button>🚪 Logout</button>
-         </Link>
+            <Link to={"/favorites"}>
+            <button>❤️ Mis favoritos</button>
+            </Link>
 
-         <Link to={"/favorites"}>
-         <button>❤️ My favorites</button>
-         </Link>
-      
+            <Link to={"/packs"}>
+            <button>🎴 Packs</button>
+            </Link>
 
-         <Link to={"/packs"}>
-         <button>🎴 Packs</button>
-         </Link>
-
+            <Link to={"/about"}>
+            <button className={style.iconoButton} title='About'>ℹ</button>            
+            </Link>
+            
          </div>
          
          <SearchBar onSearch={props.onSearch} ></SearchBar>

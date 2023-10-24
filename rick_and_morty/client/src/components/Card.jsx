@@ -27,20 +27,18 @@ useEffect(() => {
    const handleFavorite = () => {
         
     };
-// className={index===characters.length-1? estilos[randomIndex]:style.aparecerScaleRotation}
+
    return (
-      <>
       <div className={`${style.card} ${props.clase}`} >
          <div className={style.perfil}>
-            <img src={props.image} alt='' />   
-
+            <Link to={`/detail/${props.id}`}>      
+            <img className={props.status==='Alive'?style.alive:style.dead} src={props.image} alt='' />   
+            </Link>
          </div>
          <div className={style.detail}>
             {pathname=='/home' &&<button className={style.cros} onClick={()=>{props.onClose(props.id)}}>❌</button>}
          <div>
-            <Link to={`/detail/${props.id}`}>      
             <h2 className={style.name}>{props.name}</h2>
-            </Link>
          </div>
          
          <div>
@@ -57,6 +55,6 @@ useEffect(() => {
          </div>
          </div>
       </div>
-      </>
+
    );
 }

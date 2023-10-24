@@ -16,3 +16,13 @@
     gap: 15px;
     padding: 15px;
 }
+.navegacionButtons button{
+    height: 2em;
+    display: flex;
+    justify-content: center;
+}
+.navegacionButtons  .iconoButton{
+    height: 2em;
+    width: 2em;
+    
+}

@@ -3,10 +3,15 @@
     height: 3em;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 5px;
     border-left: 1px solid white;
 
 }
 .input{
     border: none;
+}
+.searchBar button{
+    height: 2em;
+    width: 2em;
 }
