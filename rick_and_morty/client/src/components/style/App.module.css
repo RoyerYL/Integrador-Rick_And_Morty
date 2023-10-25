@@ -39,14 +39,10 @@ body{
     font-size: 1em;
     
     cursor: pointer;
-    transition: trasform 0.2s;
   }
   button:hover{
     background-color: gray;
     color: white;
-    scale: 1.1;
-    border-top: 2px solid rgb(43, 43, 43);
-    border-left: 2px solid rgb(43, 43, 43);
   }
 
  
@@ -54,6 +50,8 @@ body{
     transform: scale(0.9);
     border: none;
   }
+
+  /*Quita el decoration de los link*/
   a{
     text-decoration: none;
   }

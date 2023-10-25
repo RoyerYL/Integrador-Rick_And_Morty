@@ -34,9 +34,7 @@ const home=()=>{
    }
    return style.cardsPack 
 }
- return <div className={`${style.cadrsContainer}`}>
-
-      <div className={home()} >
+ return <div className={home()} >
       {
          characters.map((charcter,index)=>
          {return(
@@ -58,6 +56,6 @@ const home=()=>{
          )})
       }
       </div>;
-   </div>
+   
 
 }

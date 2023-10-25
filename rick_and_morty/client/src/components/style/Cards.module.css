@@ -7,11 +7,7 @@
    margin-top: 64px;
    padding-top: 25px;
   }
-  .cardsContainer{
-  width: 100%;
-  height: 100%;
-  
-}
+
 /* Agrega una clase para la animación */
 .aparecerScale{
     /* opacity: 0;
@@ -95,12 +91,7 @@
 .cardsPack{
   display: flex;
   flex-direction: row;
-  scale: 0.7;
   justify-content: center;
-  position: absolute;
-  
-
-left: 0px;
-right: 0px;
-
+  flex-wrap: wrap;
+  gap: 25px;
 }
