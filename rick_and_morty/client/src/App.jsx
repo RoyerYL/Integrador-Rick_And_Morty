@@ -13,14 +13,17 @@ import Favorites from './components/Favorites';
 import Packs from './components/Packs'
 
 function App() {
+   const EMAIL = 'root';
+   const PASSWORD = 'root';
 
    const [characters,setCharacters] = useState([])
    const [packCharacters,setPackCharacters] = useState([])
+
    const {pathname} =useLocation();
+   
    const navigate = useNavigate();
    const [access,setAccess] = useState(false)
-   const EMAIL = 'root';
-   const PASSWORD = 'root';
+   
    
    function login(userData) {
       if (userData.password === PASSWORD && userData.email === EMAIL) {
@@ -29,26 +32,25 @@ function App() {
       }
    }
 
-   
    function onSearch(id) {
       let repetido=false
+
       characters.forEach(element => {
          if(element.id==id)
          {
             repetido=true;
          }
-         
       });
-      if(!repetido){
-      // axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
 
-      axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
-         if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);
-         } else {
-            window.alert('¡No hay personajes con este ID!');
-         }
-      });}
+      if(!repetido){
+         axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
+            if (data.name) {
+               setCharacters((oldChars) => [...oldChars, data]);
+            } else {
+               window.alert('¡No hay personajes con este ID!');
+            }
+         });
+      }
       else{
          alert("Personaje ya agregado")
       }
@@ -63,53 +65,42 @@ function App() {
             {
                repetido=true;
             }
-            
          });
          axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
             if (data.name) {
                setPackCharacters((oldChars) => [...oldChars, data]);
             } else {
                window.alert('¡No hay personajes con este ID!');
-            }
-         });}
-      
+               }
+         });
       }
+   }
       
    function onClose(id) {
-         setCharacters(characters.filter((character)=>{return character.id !== Number(id)}))
-         
+         setCharacters(characters.filter((character)=>{return character.id !== Number(id)}))  
       }
       
    useEffect(() => {
-         
          !access && navigate('/');
       }, [access]);
       
       return (
          <div className={pathname=='/'? style.login:style.app}>
-
-         {pathname!='/' && 
-         <Nav onSearch={onSearch}/>}
-         
-     
-         
-      <Routes>
-         
-         <Route path='/' element={<Login login={login}/>} />
-         <Route path='/home' element={<Cards characters={characters} onClose={onClose} />}/>
-         <Route path='/favorites' element={<Favorites onClose={onClose} />}/>      
-         <Route path='/about' element={<About />}/>
-         <Route path='/packs' element={<Packs  charactersPack={packCharacters} handleClick={handleClick}/>}/>
-         <Route path='/detail/:id' element={<Detail />}/>
-         
-      </Routes>
-
-      
-      
-
-
-      </div>
-   );
+            {pathname!='/' && 
+            <Nav onSearch={onSearch}/>}
+            
+            <Routes>
+               
+               <Route path='/' element={<Login login={login}/>} />
+               <Route path='/home' element={<Cards characters={characters} onClose={onClose} />}/>
+               <Route path='/favorites' element={<Favorites onClose={onClose} />}/>      
+               <Route path='/about' element={<About />}/>
+               <Route path='/packs' element={<Packs setPackCharacters={setPackCharacters} charactersPack={packCharacters} handleClick={handleClick}/>}/>
+               <Route path='/detail/:id' element={<Detail />}/>
+               
+            </Routes>
+        </div>
+      );
    
 }
    

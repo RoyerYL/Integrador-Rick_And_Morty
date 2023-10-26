@@ -1,12 +1,10 @@
 .searchBar{
-    width: 400px;
-    height: 3em;
+
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 5px;
-    border-left: 1px solid white;
-
+    justify-content: flex-end;
+    gap: 10px;
+    padding-right: 10px;
 }
 .input{
     border: none;

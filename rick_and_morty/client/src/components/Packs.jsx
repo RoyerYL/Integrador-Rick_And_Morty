@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import style from './style/Packs.module.css'
 import Pack from './Pack'
 import Card from './Card'
@@ -9,7 +9,7 @@ const Packs = (props) => {
 const [packs,setPacks]=useState([])
 const [id_,setId]=useState(0)
 
-const {handleClick,charactersPack}=props
+const {handleClick,charactersPack,setPackCharacters}=props
 const rearezas = [
   "Epic","Rare","Común"
 ];
@@ -22,29 +22,31 @@ const addPack=()=>{
     setPacks([...packs,{id:id_,rareza:rearezas[randomIndex]}])
   }
 }
-
+function onClose(id) {
+  setPacks(packs.filter((pack)=>{return pack.id !== Number(id)}))  
+}
+useEffect(()=>{setPackCharacters([])},[])
   return (
     <div className={style.panel}>
       
     <div className={style.containerPacks}>
-      
-
-        <button className={style.botonAdd} onClick={addPack}>+ pack</button>
-      
+      <div>
+        
         <div className={style.packs} >
-          {packs.map((pack,index)=>
+          <button className={style.botonAdd} onClick={addPack} title='Añadir'>➕</button>
+          {packs.map((pack)=>
           {return(
-            <Pack key={pack.id} rareza={pack.rareza} handleClick={handleClick}/>
+            <Pack key={pack.id} id={pack.id} rareza={pack.rareza} handleClick={handleClick} onClose={onClose}/>
             )})
           }
         </div>
 
-        <div className={style.cardsPack}>
-          <Cards  characters={charactersPack}  />
-        </div>
+      </div>
+      <div>
+        
+        <Cards  characters={charactersPack}  />
 
-    
-      
+      </div>
     </div>
 </div>
 )
