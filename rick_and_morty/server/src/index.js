@@ -45,29 +45,27 @@
 // }).listen(3001,"localhost");//server localhost:3001rsrs
 
 const express = require('express');
-const { getCharById } = require('./controllers/getCharById');
-const routerCharacter =require('./controllers/getCharById');
+const {router} =require('./routes/index');
 const PORT = 3001;
 const server = express();
 
+
 server.use(express.json())
 server.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:5173'); // Reemplaza con tu dominio permitido
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  
-    // Habilita cookies y credenciales (si es necesario)
-    res.header('Access-Control-Allow-Credentials', 'true');
-  
-    if (req.method === 'OPTIONS') {
-      // Respuesta preflights CORS
-      res.status(204).send();
-    } else {
-      next();
-    }
-  })
-server.use('/rickandmorty/character',routerCharacter)
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header(
+     'Access-Control-Allow-Headers',
+     'Origin, X-Requested-With, Content-Type, Accept'
+  );
+  res.header(
+     'Access-Control-Allow-Methods',
+     'GET, POST, OPTIONS, PUT, DELETE'
+  );
+  next();
+});
 
+server.use("/rickandmorty",router)
 
 server.listen(PORT, () => {
    console.log('Server raised in port: ' + PORT);
