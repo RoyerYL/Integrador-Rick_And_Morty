@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import Cards from './Cards';
 export default function Favorites(props) {
   //redux
-  const myFavorites=Array.from(useSelector((state)=>state.myFavorites));
+  const myFavorites=useSelector((state)=>state.myFavorites);
   const dispatch = useDispatch();
 
   const [aux, setAux] = useState(false);

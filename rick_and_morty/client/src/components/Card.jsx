@@ -23,6 +23,7 @@ useEffect(() => {
  }, [myFavorites]);
 
  const handleFavorite = () => {
+
    isFav ? dispatch(remove_fav(props.id)) : dispatch(add_fav(props));
 
    setIsFav(!isFav);

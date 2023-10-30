@@ -5,17 +5,17 @@ const initialState = {
     allCharacters:[]
   }
   
-  export default (state = initialState, {type,payload}) => {
-    switch (type) {
-      case ADD_FAV:
+export default (state = initialState, {type,payload}) => {
+  switch (type) {
+    case ADD_FAV:
         return { ...state, myFavorites: payload, allCharacters: payload };
 
-      case REMOVE_FAV:
-        return { ...state, myFavorites: payload ,allCharacters:payload};
+    case REMOVE_FAV:
+      return { ...state, myFavorites: payload ,allCharacters:payload};
       
-        case "FILTER":
+    case "FILTER":
 
-        if (payload === "ALL") {
+      if (payload === "ALL") {
           return {
             ...state,
             myFavorites: state.allCharacters,
@@ -30,12 +30,12 @@ const initialState = {
           };
         }
 
-        case "ORDER":
+    case "ORDER":
 
-          let orderedCharacters;
-          if (payload === "A") {
-            orderedCharacters = state.allCharacters.sort((a, b) => a.id - b.id);
-          } else {
+      let orderedCharacters;
+      if (payload === "A") {
+          orderedCharacters = state.allCharacters.sort((a, b) => a.id - b.id);
+        } else {
             orderedCharacters = state.allCharacters.sort((a, b) => b.id - a.id);
           }
           return {
@@ -43,9 +43,9 @@ const initialState = {
             myFavorites: orderedCharacters,
           };
     
-        default:
-          return {
-            ...state,
+    default:
+      return {
+          ...state,
           };
             
         }

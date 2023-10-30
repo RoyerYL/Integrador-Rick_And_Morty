@@ -10,9 +10,14 @@ const postFav=(req,res)=>{
 }
 
 const deleteFav=(req,res)=>{
-
-    myFavorites=myFavorites.filter((fav)=>{fav.id!=Number(req.params.id)})
-
+    const aux=[]
+    myFavorites.forEach(fav => {
+        if(fav.id!==Number(req.params.id))
+        {
+            aux.push(fav)
+        }
+    });
+    myFavorites=aux
     res.status(200).json(myFavorites);
 }
 
