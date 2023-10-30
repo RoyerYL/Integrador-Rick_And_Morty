@@ -13,8 +13,7 @@ import Favorites from './components/Favorites';
 import Packs from './components/Packs'
 
 function App() {
-   const EMAIL = 'root';
-   const PASSWORD = 'root';
+
 
    const [characters,setCharacters] = useState([])
    const [packCharacters,setPackCharacters] = useState([])
@@ -26,10 +25,6 @@ function App() {
    
    
    function login(userData) {
-      // if (userData.password === PASSWORD && userData.email === EMAIL) {
-      //    setAccess(true);
-      //    navigate('/home');
-      // }
       const { email, password } = userData;
       const URL = 'http://localhost:3001/rickandmorty/login/';
       axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {

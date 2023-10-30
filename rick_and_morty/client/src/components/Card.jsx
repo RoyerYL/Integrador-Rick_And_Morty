@@ -4,14 +4,12 @@ import { Link, useLocation } from 'react-router-dom';
 import { add_fav, remove_fav } from '../redux/action';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-
 export default function Card(props) {
-//redux
+
 const myFavorites=useSelector((state)=>state.myFavorites)
 const dispatch = useDispatch();
 
 const {pathname} =useLocation();
-
 
 const [isFav,setIsFav]=useState(false)
 
@@ -24,9 +22,11 @@ useEffect(() => {
    });
  }, [myFavorites]);
 
-   const handleFavorite = () => {
-        
-    };
+ const handleFavorite = () => {
+   isFav ? dispatch(remove_fav(props.id)) : dispatch(add_fav(props));
+
+   setIsFav(!isFav);
+ };
 
    return (
       <div className={`${style.card} ${props.clase}`} >
@@ -49,9 +49,9 @@ useEffect(() => {
             <h2>{props.species}</h2>
             <h2>{props.gender}</h2>
             {isFav?
-            (<button className={style.heart} onClick={()=>{dispatch(remove_fav(props.id)); setIsFav(!isFav);}}>❤️</button>) 
+            (<button className={style.heart} onClick={handleFavorite}>❤️</button>) 
             :
-            (<button className={style.heart} onClick={()=>{dispatch(add_fav(props)); setIsFav(!isFav);}}>🤍</button>)}
+            (<button className={style.heart} onClick={handleFavorite}>🤍</button>)}
          </div>
          </div>
       </div>

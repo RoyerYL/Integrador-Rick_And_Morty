@@ -1,15 +1,22 @@
-let favoritos=[]
+const { json } = require("express");
+
+let myFavorites=[]
+
 const postFav=(req,res)=>{
     
-    favoritos.push(req.body)
+    myFavorites.push(req.body)
 
-    res.status(200).json(favoritos);
+    res.status(200).json(myFavorites);
 }
 
 const deleteFav=(req,res)=>{
 
-    favoritos=favoritos.filter((fav)=>{fav.id!==Number(req.params)})
+    myFavorites=myFavorites.filter((fav)=>{fav.id!=Number(req.params.id)})
 
-    res.status(200).json(favoritos);
+    res.status(200).json(myFavorites);
 }
-module.exports={postFav,deleteFav}
+
+const getFav=(req,res)=>{
+    res.status(200).json(myFavorites)
+}
+module.exports={postFav,deleteFav,getFav}

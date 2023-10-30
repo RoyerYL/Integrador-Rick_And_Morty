@@ -49,6 +49,9 @@ const {router} =require('./routes/index');
 const PORT = 3001;
 const server = express();
 
+const morgan = require('morgan');
+
+server.use(morgan('dev'))
 
 server.use(express.json())
 server.use((req, res, next) => {
