@@ -1,4 +1,4 @@
-import { ADD_FAV, FILTER, REMOVE_FAV } from "./action"
+import { ADD_FAV, FILTER, ORDER, REMOVE_FAV } from "./acionTypes"
 
 const initialState = {
     myFavorites: [],
@@ -30,7 +30,7 @@ export default (state = initialState, {type,payload}) => {
           };
         }
 
-    case "ORDER":
+    case ORDER:
 
       let orderedCharacters;
       if (payload === "A") {

@@ -35,20 +35,27 @@ const URL= `https://rickandmortyapi.com/api/character/`;
 //         })
 // }
 const getCharById=async(req,res)=>{
+    console.log("getCahrById!");
     try {
-        const {id}= req.params
-        const{data}=await axios.get()
-        if(data){
-                        let character={
-                        id:response.data.id,
-                        name:response.data.name,
-                        gender:response.data.gender,
-                        species:response.data.species,
-                        origin:response.data.origin,
-                        image:response.data.image,
-                        status:response.data.status}
+        console.log("try");
 
-    res.status(200).json(character);
+        const {id}= req.params
+        console.log(id);
+
+        const{data}=await axios.get(`${URL}${id}`)
+        let character={}
+        if(data){
+            character={
+                id:data.id,
+                name:data.name,
+                gender:data.gender,
+                species:data.species,
+                origin:data.origin,
+                image:data.image,
+                status:data.status}
+                
+                console.log(character);
+        res.status(200).json(character);
             
         }
 
