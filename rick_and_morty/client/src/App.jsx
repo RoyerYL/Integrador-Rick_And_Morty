@@ -24,14 +24,27 @@ function App() {
    const [access,setAccess] = useState(false)
    
    
-   function login(userData) {
+   // function login(userData) {
+   //    const { email, password } = userData;
+   //    const URL = 'http://localhost:3001/rickandmorty/login/';
+   //    axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+   //       const { access } = data;
+   //       setAccess(data);
+   //       access && navigate('/home');
+   //    });
+   // }
+   async function login(userData) {
+    try {
       const { email, password } = userData;
       const URL = 'http://localhost:3001/rickandmorty/login/';
-      axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-         const { access } = data;
-         setAccess(data);
-         access && navigate('/home');
-      });
+      const {data} =await axios(URL+`?email=${email}&password=${password}`)
+      setAccess(data);
+      access && navigate('/home');
+
+
+      } catch (error) {
+         throw new Error("Error de login")
+         }
    }
 
    function onSearch(id) {
@@ -58,7 +71,7 @@ function App() {
       }
    }
 
-   function handleClick(id) {
+   function handleClick() {
       setPackCharacters([])
       for (let i = 0; i < 5; i++) {
          let id=Math.round(Math.random()*826);
@@ -68,7 +81,7 @@ function App() {
                repetido=true;
             }
          });
-         axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+         axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
             if (data.name) {
                setPackCharacters((oldChars) => [...oldChars, data]);
             } else {
