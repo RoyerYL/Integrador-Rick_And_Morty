@@ -35,12 +35,8 @@ const URL= `https://rickandmortyapi.com/api/character/`;
 //         })
 // }
 const getCharById=async(req,res)=>{
-    console.log("getCahrById!");
     try {
-        console.log("try");
-
         const {id}= req.params
-        console.log(id);
 
         const{data}=await axios.get(`${URL}${id}`)
         let character={}
@@ -53,10 +49,8 @@ const getCharById=async(req,res)=>{
                 origin:data.origin,
                 image:data.image,
                 status:data.status}
-                
-                console.log(character);
+
         res.status(200).json(character);
-            
         }
 
     } catch (error) {

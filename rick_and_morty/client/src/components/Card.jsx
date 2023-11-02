@@ -37,24 +37,26 @@ useEffect(() => {
             </Link>
          </div>
          <div className={style.detail}>
-            {pathname=='/home' &&<button className={style.cros} onClick={()=>{props.onClose(props.id)}}>❌</button>}
-         <div>
-            <h2 className={style.name}>{props.name}</h2>
+            <div>
+               <h2 className={style.name}>{props.name}</h2>
+            </div>
+            
+            <div>
+               <h2 className={style.origin}>{props.origin}</h2>
+            </div>
+            <div className={style.info}>
+               <h2>{props.status}</h2>
+               <h2>{props.species}</h2>
+               <h2>{props.gender}</h2>
+            </div>
          </div>
-         
-         <div>
-            <h2 className={style.origin}>{props.origin}</h2>
-         </div>
-         <div className={style.info}>
-            <h2>{props.status}</h2>
-            <h2>{props.species}</h2>
-            <h2>{props.gender}</h2>
+            {pathname=='/home' &&
+            <button className={style.cros} onClick={()=>{props.onClose(props.id)}}>❌</button>}
+            
             {isFav?
             (<button className={style.heart} onClick={handleFavorite}>❤️</button>) 
             :
             (<button className={style.heart} onClick={handleFavorite}>🤍</button>)}
-         </div>
-         </div>
       </div>
 
    );

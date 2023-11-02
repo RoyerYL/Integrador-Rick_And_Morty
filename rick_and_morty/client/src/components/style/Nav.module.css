@@ -7,7 +7,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
+    position: fixed;
+    overflow: hidden;
+    z-index: 2000;
 }
 .navegacionButtons{
     display: flex;

@@ -6,6 +6,9 @@
     justify-content: center;
    margin-top: 64px;
    padding-top: 25px;
+   margin-left: 15px;
+   margin-right: 15px;
+   position: relative;
   }
 
 /* Agrega una clase para la animación */
