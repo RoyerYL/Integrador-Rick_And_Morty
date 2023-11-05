@@ -34,6 +34,7 @@ useEffect(()=>{setPackCharacters([])},[])
         
         <div className={style.packs} >
           <button className={style.botonAdd} onClick={addPack} title='Añadir'>➕</button>
+          
           {packs.map((pack)=>
           {return(
             <Pack key={pack.id} id={pack.id} rareza={pack.rareza} handleClick={handleClick} onClose={onClose}/>

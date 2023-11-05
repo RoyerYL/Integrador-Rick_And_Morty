@@ -24,30 +24,23 @@
     width: 75px;
     height: 130px;
     cursor: pointer;
+
 }
 .packs{
 
-    height: 250px;
-    
+    height: 185px;
+    width: 100vh;
+
     display: flex;
-    
     flex-wrap: wrap;
-    align-content: center;
+    justify-content: flex-start;
     align-items: center;
-    margin-left: 15px;
-    margin-right: 15px;
+
     padding-left: 30px;
     padding-right: 30px;
 }
 
-.image:hover{
-    transition: transform 0.7s;
-    transform: scale(1.1);
-    box-shadow: 0 0 50px 15px rgba(228, 241, 107, 0.9);
-    animation: rotateShadow 2s linear infinite;
-    position: absolute; /* o fixed si es necesario */
-    z-index: 1000; 
-}
+
 .image:active{
     transform: scale(0.8);
 }
@@ -64,37 +57,90 @@
 
 /* ------------------------------- */
 
-@keyframes rotateShadow {
-    0% {
-        box-shadow: 0 0 30px 25px rgba(221, 235, 103, 0.9);
 
-    }
-
-    50% {
-        box-shadow: 0 0 50px 25px rgba(255, 255, 255, 0.2);
-
-    }
-    100% {
-        box-shadow: 0 0 30px 25px rgba(221, 235, 103, 0.9);
-
-    }
-}
 
 .epic{
+    overflow: hidden;
+    border-radius: 15%;
     border-top:2px solid rgb(251, 255, 4) ;
     border-right:2px solid rgb(238, 255, 4) ;
     box-shadow: 0 0 50px 15px rgba(209, 206, 39, 0.9);
 
+}.epic:hover{
+    transition: transform 0.7s;
+    transform: scale(1.1);
+    box-shadow: 0 0 50px 15px rgba(209, 206, 39, 0.9);
+    animation: shadowEpic 2s linear infinite;
+    z-index: 1000; 
+}
+@keyframes shadowEpic {
+    0% {
+        box-shadow: 0 0 50px 15px rgba(209, 206, 39, 0.9);
+    }
+
+    50% {
+        box-shadow: 0 0 50px 15px rgba(209, 206, 39, 0);
+
+    }
+    100% {
+        box-shadow: 0 0 50px 15px rgba(209, 206, 39, 0.9);
+
+    }
 }
 .rare{
+    overflow: hidden;
+    border-radius: 15%;
     border-top:2px solid rgb(255, 4, 4) ;
     border-right:2px solid rgb(255, 4, 4) ;
     box-shadow: 0 0 50px 15px rgba(209, 39, 39, 0.9);
 
+}.rare:hover{
+    transition: transform 0.7s;
+    transform: scale(1.1);
+    box-shadow: 0 0 50px 15px rgba(209, 39, 39, 0.9);
+    animation: shadowRare 2s linear infinite;
+    z-index: 1000; 
+}
+@keyframes shadowRare {
+    0% {
+        box-shadow: 0 0 50px 15px rgba(209, 39, 39, 0.9);
+    }
+
+    50% {
+        box-shadow: 0 0 50px 15px rgba(209, 39, 39, 0);
+
+    }
+    100% {
+        box-shadow: 0 0 50px 15px rgba(209, 39, 39, 0.9);
+
+    }
 }
 .comun{
+
+    border-radius: 15%;
     border-top:2px solid rgb(4, 42, 255) ;
     border-right:2px solid rgb(21, 4, 255) ;
     box-shadow: 0 0 50px 15px rgba(39, 65, 209, 0.9);
 
+
+}.comun:hover{
+    transition: transform 0.8s;
+    transform: scale(1.2);
+    box-shadow: 0 0 50px 15px rgba(39, 65, 209, 0.9);
+    animation: shadowComun 2s linear infinite;
+    z-index: 1000; 
+}
+@keyframes shadowComun {
+    0% {
+        box-shadow: 0 0 50px 15px rgba(39, 65, 209, 0.9);
+    }
+
+    50% {
+        box-shadow: 0 0 50px 15px rgba(39, 65, 209, 0);
+
+    }
+    100% {
+        box-shadow: 0 0 50px 15px rgba(39, 65, 209, 0.9);
+
+    }
 }

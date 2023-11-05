@@ -40,6 +40,9 @@ body{
     
     cursor: pointer;
   }
+  h2{
+    margin: 0px;
+  }
   button:hover{
     background-color: gray;
     color: white;
