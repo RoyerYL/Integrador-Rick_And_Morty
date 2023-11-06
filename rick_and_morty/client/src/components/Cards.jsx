@@ -36,7 +36,7 @@ const home=()=>{
 }
  return <div className={home()} >
       {
-         characters.map((charcter,index)=>
+         characters.map((charcter)=>
          {return(
             <div 
                key={charcter.id} //importante añdir unna KEY
@@ -49,7 +49,7 @@ const home=()=>{
             status={charcter.status}
             species={charcter.species} 
             gender={charcter.gender} 
-            origin={charcter.origin?.name} 
+            origin={charcter.origin} 
             image={charcter.image} 
             onClose={onClose}/>
             </div>

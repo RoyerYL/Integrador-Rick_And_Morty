@@ -44,11 +44,9 @@ useEffect(() => {
          </div>
 
          <div className={style.containerOrigin}>
-            <h2 className={style.origin}>{props.origin}</h2>
+            <h2 className={style.origin}>{props.origin?.name}</h2>
          </div>
-
-         <div className={style.detail}>
-            
+ 
             <div className={style.info}>
                <div className={style.containerSpecies}>
                   <h2 className={style.species}>{props.species}</h2>
@@ -59,8 +57,6 @@ useEffect(() => {
                </div>
             </div>
 
-
-         </div>
             {pathname=='/home' &&
             <button className={style.cros} onClick={()=>{props.onClose(props.id)}}>❌</button>}
             

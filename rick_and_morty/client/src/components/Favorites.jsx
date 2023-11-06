@@ -26,12 +26,17 @@ export default function Favorites(props) {
   <div className={style.containerFavorites}>
    <div className={style.myFavorites}>
       
-      <div className=''>
-        <select onChange={handleOrder}>
-          <option value="A">Ascendente</option>
-          <option value="D">Descendente</option>
-        </select>
+      <div className={style.filter}>
+        <div className={style.containerAsc}>
+          <select onChange={handleOrder}>
+            <option value="A">Ascendente</option>
+            <option value="D">Descendente</option>
+          </select>
+        <p className={style.flechaAsc}> 🡣</p>
+        </div>
 
+        <div className={style.containerAll}>
+        <p className={style.flechaAll}> 🡣</p>
         <select onChange={handleFilter}>
           <option value="ALL">All</option>
           <option value="Male">Male</option>
@@ -39,6 +44,7 @@ export default function Favorites(props) {
           <option value="Genderless">Genderless</option>
           <option value="unknown">Unknown</option>
         </select>
+        </div>
       </div>
 
       <div>
