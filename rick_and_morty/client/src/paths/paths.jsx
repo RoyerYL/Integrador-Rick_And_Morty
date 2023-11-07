@@ -1,0 +1,6 @@
+export const LOGIN_PATH='/login'
+export const HOME_PATH='/'
+export const FAVORITES_PATH='/favorites'
+export const ABOUT_PATH='/about'
+export const PACKS_PATH='/packs'
+export const DETAIL_ID_PATH='/detail/:id'

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import validar from './Validation'
-import style from './style/Form.module.css'
+import validar from '../scripts/Validation'
+import style from '../style/Form.module.css'
 
 
 export default function Form(props){

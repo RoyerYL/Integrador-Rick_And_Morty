@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import Formm from './Form'
+import Formm from './models/Form.jsx'
 import style from './style/Login.module.css'
-import {imagesLogin} from "./constantes/Images.jsx"
+import {imagesLogin} from "./constants/Images.jsx"
 
 export default function Login(props) {
 

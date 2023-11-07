@@ -1,4 +1,4 @@
-import style from './style/Nav.module.css'
+import style from '../style/Nav.module.css'
 import { Link } from 'react-router-dom';
 
 import SearchBar from './SearchBar'
@@ -8,11 +8,11 @@ export default function Card(props) {
        <div className={style.nav}>
          <div className={style.navegacionButtons}>
                
-            <Link to={"/"}>
+            <Link to={"/login"}>
             <button className={style.iconoButton} title='Logout'>🚪</button>
             </Link>
 
-            <Link to={"/home"}>
+            <Link to={"/"}>
             <button className={style.botones} title='Home'>🏠 Home</button>
             </Link>
 

@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
-import style from './style/Card.module.css'
+import style from '../style/Card.module.css'
 import { Link, useLocation } from 'react-router-dom';
-import { add_fav, remove_fav } from '../redux/action';
+import { add_fav, remove_fav } from '../../redux/action';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 export default function Card(props) {

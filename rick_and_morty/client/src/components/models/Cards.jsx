@@ -1,6 +1,6 @@
-import style from './style/Cards.module.css'
-import Card from './Card';
+import style from '../style/Cards.module.css'      
 import { useLocation } from 'react-router-dom';
+import Card from './Card';
 
 export default function Cards(props) {
    const {pathname} =useLocation();
@@ -29,7 +29,7 @@ const background =(especie)=>{
    }
 }
 const home=()=>{
-   if(pathname==='/home'){
+   if(pathname==='/'){
       return style.cards;
    }
    return style.cardsPack 

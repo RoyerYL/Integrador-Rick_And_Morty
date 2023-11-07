@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import style from './style/Packs.module.css'
-import Pack from './Pack'
-import Card from './Card'
-import axios from 'axios'
-import Cards from './Cards'
+import Pack from './models/Pack'
+import Cards from './models/Cards'
 const Packs = (props) => {
 
 const [packs,setPacks]=useState([])

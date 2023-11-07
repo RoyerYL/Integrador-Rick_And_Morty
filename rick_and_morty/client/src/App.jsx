@@ -1,56 +1,54 @@
 
-import Cards from './components/Cards';
-import Nav from './components/Nav';
+import Cards from './components/models/Cards';
+import Nav from './components/navBar/Nav';
 import style from './components/style/App.module.css'
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-import {  Route, useLocation, useNavigate } from 'react-router-dom';
-import { Routes } from 'react-router-dom';
+
 import About from './components/About';
 import Detail from './components/Detail';
 import Login from './components/Login';
 import Favorites from './components/Favorites';
 import Packs from './components/Packs'
+   
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import {  Route, useLocation, useNavigate } from 'react-router-dom';
+import { Routes } from 'react-router-dom';
+
+import { ABOUT_PATH, DETAIL_ID_PATH, FAVORITES_PATH, HOME_PATH, LOGIN_PATH, PACKS_PATH } from './paths/paths';
 
 function App() {
 
+   /************ PATH ************/
+   const {pathname} =useLocation();
+   const navigate = useNavigate();
+   
+   /************ SEGURIDAD ************/
+
+   const [access,setAccess] = useState(false)
+
+   function login(userData) {
+      const { email, password } = userData;
+      const URL = 'http://localhost:3001/rickandmorty/login/';
+      axios(URL,{params:{email,password}})
+         .then(({ data }) => {
+            const { access } = data;
+            setAccess(data);
+            access && navigate(HOME_PATH);
+         });
+   }
+
+   useEffect(() => {
+         !access && navigate(LOGIN_PATH);
+      }, [access]);
+      
+   /************ ESTADO - CHARACTER ************/
 
    const [characters,setCharacters] = useState([])
    const [packCharacters,setPackCharacters] = useState([])
 
-   const {pathname} =useLocation();
-   
-   const navigate = useNavigate();
-   const [access,setAccess] = useState(false)
-   
-   
-   function login(userData) {
-      const { email, password } = userData;
-      const URL = 'http://localhost:3001/rickandmorty/login/';
-      axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-         const { access } = data;
-         setAccess(data);
-         access && navigate('/home');
-      });
-   }
-
-   // async function login(userData) {
-   //  try {
-   //    const { email, password } = userData;
-   //    const URL = 'http://localhost:3001/rickandmorty/login/';
-   //    const {data} =await axios(URL+`?email=${email}&password=${password}`)
-   //    setAccess(data);
-   //    access && navigate('/home');
-
-
-   //    } catch (error) {
-   //       throw new Error("Error de login")
-   //       }
-   // }
-
    async function onSearch(id) {
       let repetido=false
-
+      
       characters.forEach(element => {
          if(element.id==id)
          {
@@ -59,13 +57,6 @@ function App() {
       });
 
       if(!repetido){
-         // axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
-         //    if (data.name) {
-         //       setCharacters((oldChars) => [...oldChars, data]);
-         //    } else {
-         //       window.alert('¡No hay personajes con este ID!');
-         //    }
-         // });
          try {
             const {data}=await axios(`http://localhost:3001/rickandmorty/character/${id}`)
             setCharacters((oldChars) => [...oldChars, data]);
@@ -103,23 +94,21 @@ function App() {
          setCharacters(characters.filter((character)=>{return character.id !== Number(id)}))  
       }
       
-   useEffect(() => {
-         !access && navigate('/');
-      }, [access]);
-      
+   /************ APP ************/
+   
       return (
-         <div className={pathname=='/'? style.login:style.app}>
-            {pathname!='/' && 
+         <div className={pathname===LOGIN_PATH? style.login:style.app}>
+            {pathname!==LOGIN_PATH && 
             <Nav onSearch={onSearch}/>}
             
             <Routes>
                
-               <Route path='/' element={<Login login={login}/>} />
-               <Route path='/home' element={<Cards characters={characters} onClose={onClose} />}/>
-               <Route path='/favorites' element={<Favorites onClose={onClose} />}/>      
-               <Route path='/about' element={<About />}/>
-               <Route path='/packs' element={<Packs setPackCharacters={setPackCharacters} charactersPack={packCharacters} handleClick={handleClick}/>}/>
-               <Route path='/detail/:id' element={<Detail />}/>
+               <Route path={LOGIN_PATH} element={<Login login={login}/>} />
+               <Route path={HOME_PATH} element={<Cards characters={characters} onClose={onClose} />}/>
+               <Route path={FAVORITES_PATH} element={<Favorites onClose={onClose} />}/>      
+               <Route path={ABOUT_PATH} element={<About />}/>
+               <Route path={PACKS_PATH} element={<Packs setPackCharacters={setPackCharacters} charactersPack={packCharacters} handleClick={handleClick}/>}/>
+               <Route path={DETAIL_ID_PATH} element={<Detail />}/>
                
             </Routes>
         </div>

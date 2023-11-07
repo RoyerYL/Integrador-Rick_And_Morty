@@ -1,11 +1,11 @@
 import { useDispatch } from 'react-redux';
 import style from './style/Cards.module.css'
-import Card from './Card';
+import Card from './models/Card';
 
 import { add_fav, filterCards, orderCards, remove_fav } from '../redux/action';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import Cards from './Cards';
+import Cards from './models/Cards';
 export default function Favorites(props) {
   //redux
   const myFavorites=useSelector((state)=>state.myFavorites);
