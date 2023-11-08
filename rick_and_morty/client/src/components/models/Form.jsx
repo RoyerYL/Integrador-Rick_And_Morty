@@ -34,8 +34,8 @@ const submitHandler=(event)=>{
         
 <form className={style.form}>
     <div>
-    <label htmlFor="email">Email: </label>
-    <input type="text" name='email' value={form.username} onChange={handleChange}/>
+        <label htmlFor="email">Email: </label>
+        <input type="text" name='email' value={form.username} onChange={handleChange}/>
     </div>
     <span>{errors.email}</span>
 

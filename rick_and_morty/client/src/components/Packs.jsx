@@ -24,27 +24,22 @@ function onClose(id) {
   setPacks(packs.filter((pack)=>{return pack.id !== Number(id)}))  
 }
 useEffect(()=>{setPackCharacters([])},[])
+
   return (
     <div className={style.panel}>
       
-    <div className={style.containerPacks}>
-      <div>
-        
-        <div className={style.packs} >
-          <button className={style.botonAdd} onClick={addPack} title='Añadir'>➕</button>
-          
+    <div className={style.containerPacks}>        
+      <div className={style.packs} >
+        <button className={style.botonAdd} onClick={addPack} title='Añadir'>➕</button>    
           {packs.map((pack)=>
           {return(
             <Pack key={pack.id} id={pack.id} rareza={pack.rareza} handleClick={handleClick} onClose={onClose}/>
             )})
           }
-        </div>
-
       </div>
-      <div>
-        
+      
+      <div>        
         <Cards  characters={charactersPack}  />
-
       </div>
     </div>
 </div>

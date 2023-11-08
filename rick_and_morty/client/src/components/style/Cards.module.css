@@ -104,9 +104,11 @@
   appearance: none;
   border: none;
   background-color: #a147ce;
+  color: white;
 
 }
 option{
+  color: white;
   background-color: #a147ce;
 }
 

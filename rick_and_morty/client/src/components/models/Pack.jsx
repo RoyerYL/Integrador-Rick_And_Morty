@@ -2,15 +2,11 @@ import React from 'react'
 import style from '../style/Packs.module.css'
 import {imagesSobres} from '../constants/Images'
 
-const Packs = (props) => {
-
-  const {handleClick,onClose,id}=props;
+const Packs = ({handleClick,onClose,id,rareza}) => {
   
-
-
     return (      
         <div onClick={()=>{onClose(id),handleClick()}} className={style.pack}>
-          <img className={`${style.image} ${rarezaStyle(props.rareza)}`} src={imagesSobres} alt="" />
+          <img className={`${style.image} ${rarezaStyle(rareza)}`} src={imagesSobres} alt="" />
         </div>
   )
 }

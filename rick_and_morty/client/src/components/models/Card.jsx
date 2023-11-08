@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { add_fav, remove_fav } from '../../redux/action';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { HOME_PATH } from '../../paths/paths';
 export default function Card(props) {
 const {pathname} =useLocation();
 
@@ -57,7 +58,7 @@ useEffect(() => {
                </div>
             </div>
 
-            {pathname=='/home' &&
+            {pathname==HOME_PATH &&
             <button className={style.cros} onClick={()=>{props.onClose(props.id)}}>❌</button>}
             
             {isFav?
