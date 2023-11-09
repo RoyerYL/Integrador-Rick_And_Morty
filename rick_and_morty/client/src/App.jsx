@@ -8,6 +8,7 @@ import Detail from './components/Detail';
 import Login from './components/Login';
 import Favorites from './components/Favorites';
 import Packs from './components/Packs'
+import Catalogo from './components/Catalogo';
    
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -104,12 +105,12 @@ function App() {
             <Routes>
                
                <Route path={LOGIN_PATH} element={<Login login={login}/>} />
-               <Route path={HOME_PATH} element={<Cards characters={characters} onClose={onClose} />}/>
+               {/* <Route path={HOME_PATH} element={<Cards characters={characters} onClose={onClose} />}/> */}
                <Route path={FAVORITES_PATH} element={<Favorites onClose={onClose} />}/>      
                <Route path={ABOUT_PATH} element={<About />}/>
                <Route path={PACKS_PATH} element={<Packs setPackCharacters={setPackCharacters} charactersPack={packCharacters} handleClick={handleClick}/>}/>
                <Route path={DETAIL_ID_PATH} element={<Detail />}/>
-               
+               <Route path={HOME_PATH} element={<Catalogo />} />
             </Routes>
         </div>
       );
