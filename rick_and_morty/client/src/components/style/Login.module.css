@@ -1,19 +1,31 @@
 .logo{
+    position: absolute;
+    top: 0px;
+    width: 475px;
+    height: auto;
+}
+.imagenAleatoria{
+    position: absolute;
+    bottom: 75px;
     height: 250px;
     width: 250px;
-    border: 8px solid rgb(154, 198, 64,0.55);
-    box-shadow: inset 0 0 100px 5px rgba(154, 198, 64, 0.801);
     border-radius: 50%;
 }
 .login{
 
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 15px;
+
     padding: 50px;
     margin: 100px;
-    border-radius: 50%;
-    border: 8px solid rgba(61, 59, 58, 0.55);
-    box-shadow:inset 0 0 100px 5px rgba(0, 0, 0, 0.801);
+
+    height: 300px;
+    width: 300px;
+
+}
+.containerLogin{
+    width: 100vh;
+    height: 100%;
 
 }

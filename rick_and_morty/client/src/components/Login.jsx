@@ -11,8 +11,9 @@ export default function Login(props) {
 
    return (
        <div className={style.login}>
+         <img className={style.logo} src="../../img/logo.png" alt="logo rick and morty" />
          <div>  
-            <img id="random-img" className={style.logo} src={image} alt="Login" />
+            <img id="random-img" className={style.imagenAleatoria} src={image} alt="Login" />
          </div>
          <div>
             <Formm login={props.login}/>

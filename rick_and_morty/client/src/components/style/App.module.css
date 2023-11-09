@@ -3,12 +3,13 @@
     flex-direction: column;
 }
 .login{
+  position: relative;
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     /* background-image: linear-gradient(to bottom right,rgb(44, 201, 44),rgb(255, 255, 255),rgb(44, 201, 44)); */
-  background-image: url(../../../img/fondo2.jpg);
+  background-color: rgb(38 44 58);
   background-repeat: no-repeat;
   background-size: cover;
     height: 100vh;
