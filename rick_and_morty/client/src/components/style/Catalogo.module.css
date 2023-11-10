@@ -1,7 +1,10 @@
 .catalogo{
     margin-top: 65px;
-    border: 5px solid black;
-    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
     height: auto;
     width: 75%;
+    margin-bottom:50px ;
+    align-items: center;
+    gap: 35px;
 }

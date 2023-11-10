@@ -6,22 +6,34 @@ import Cards from "./models/Cards";
 export default function Catalogo() {
    
    const [chracters,setChracters] = useState([])
-   let url = 'https://rickandmortyapi.com/api/character'
+   const [url,setUrl] = useState("https://rickandmortyapi.com/api/character")
+   // let url = 'https://rickandmortyapi.com/api/character'
+
 
    useEffect(()=>{
-      axios(url)
-         .then(({data})=>{setChracters(data.results); console.log(data.results)})
-      console.log(" ---"+chracters);
+      axios('https://rickandmortyapi.com/api/character')
+         .then(({data})=>{
+            setChracters(data.results) , 
+            setUrl(data.info.next)
+         })
    },[])
 
    const handleCLick =()=>{
-      axios()
+ 
+      if(url){
+         axios(url)
+            .then(({data})=>{
+               setChracters((oldChars) => [...oldChars, ...data.results])
+               setUrl(data.info.next)
+            })
+      }
    }
 
     return (
        <div className={style.catalogo}>
       
         <Cards  characters={chracters}/>
+        <button onClick={handleCLick}>Ver más</button>
        </div>
     );
  }
