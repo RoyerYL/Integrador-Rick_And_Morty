@@ -14,12 +14,17 @@
     height: 2em;
     width: 2em;
 }
+.containerMapPack{
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
 /* ------------------------------- */
 
 .pack
 {
     position: relative;
-   
+    gap: 15px;
     margin: 10px;
     width: 75px;
     height: 130px;
@@ -27,11 +32,9 @@
 
 }
 .packs{
-
-    height: 185px;
-  
-
+    margin-top: 15px;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;

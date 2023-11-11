@@ -13,3 +13,8 @@
     height: 2em;
     width: 2em;
 }
+.containerButtons{
+    display: flex;
+    gap: 10px;
+
+}

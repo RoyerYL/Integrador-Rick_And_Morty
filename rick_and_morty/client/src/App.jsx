@@ -15,7 +15,7 @@ import { useEffect, useState } from 'react';
 import {  Route, useLocation, useNavigate } from 'react-router-dom';
 import { Routes } from 'react-router-dom';
 
-import { ABOUT_PATH, DETAIL_ID_PATH, FAVORITES_PATH, HOME_PATH, LOGIN_PATH, PACKS_PATH } from './paths/paths';
+import { ABOUT_PATH, CATALOGO_PATH, DETAIL_ID_PATH, FAVORITES_PATH, HOME_PATH, LOGIN_PATH, PACKS_PATH } from './paths/paths';
 
 function App() {
 
@@ -105,12 +105,12 @@ function App() {
             <Routes>
                
                <Route path={LOGIN_PATH} element={<Login login={login}/>} />
-               {/* <Route path={HOME_PATH} element={<Cards characters={characters} onClose={onClose} />}/> */}
+               <Route path={HOME_PATH} element={<Cards characters={characters} onClose={onClose} />}/>
                <Route path={FAVORITES_PATH} element={<Favorites onClose={onClose} />}/>      
                <Route path={ABOUT_PATH} element={<About />}/>
                <Route path={PACKS_PATH} element={<Packs setPackCharacters={setPackCharacters} charactersPack={packCharacters} handleClick={handleClick}/>}/>
                <Route path={DETAIL_ID_PATH} element={<Detail />}/>
-               <Route path={HOME_PATH} element={<Catalogo />} />
+               <Route path={CATALOGO_PATH} element={<Catalogo />} />
             </Routes>
         </div>
       );

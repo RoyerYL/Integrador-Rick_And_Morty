@@ -13,7 +13,7 @@ export default (state = initialState, {type,payload}) => {
     case REMOVE_FAV:
       return { ...state, myFavorites: payload ,allCharacters:payload};
       
-    case "FILTER":
+    case FILTER:
 
       if (payload === "ALL") {
           return {
@@ -30,18 +30,20 @@ export default (state = initialState, {type,payload}) => {
           };
         }
 
-    case ORDER:
-
-      let orderedCharacters;
-      if (payload === "A") {
-          orderedCharacters = state.allCharacters.sort((a, b) => a.id - b.id);
-        } else {
-            orderedCharacters = state.allCharacters.sort((a, b) => b.id - a.id);
+        case ORDER:
+          let orderedCharacters;
+        
+          if (payload === "A") {
+            orderedCharacters = [...state.myFavorites].sort((a, b) => a.id - b.id);
+          } else {
+            orderedCharacters = [...state.myFavorites].sort((a, b) => b.id - a.id);
           }
+        
           return {
             ...state,
             myFavorites: orderedCharacters,
           };
+        
     
     default:
       return {

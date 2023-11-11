@@ -30,12 +30,14 @@ useEffect(()=>{setPackCharacters([])},[])
       
     <div className={style.containerPacks}>        
       <div className={style.packs} >
-        <button className={style.botonAdd} onClick={addPack} title='Añadir'>➕</button>    
+        <button className={style.botonAdd} onClick={addPack} title='Añadir'>➕</button>
+        <div className={style.containerMapPack}>
           {packs.map((pack)=>
           {return(
             <Pack key={pack.id} id={pack.id} rareza={pack.rareza} handleClick={handleClick} onClose={onClose}/>
             )})
           }
+        </div>
       </div>
       
       <div>        

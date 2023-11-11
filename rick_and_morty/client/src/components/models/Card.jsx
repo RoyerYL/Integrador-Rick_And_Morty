@@ -58,8 +58,10 @@ useEffect(() => {
                </div>
             </div>
 
-            {pathname==HOME_PATH &&
-            <p className={style.cros} onClick={()=>{props.onClose(props.id)}}>{props.id}</p>}
+            {pathname==HOME_PATH ?
+            <button className={style.crosButton} onClick={()=>{props.onClose(props.id)}}>❌</button>:
+            <p className={style.cros} onClick={()=>{props.onClose(props.id)}}>{props.id}</p>
+            }
             
             {isFav?
             (<button className={style.heart} onClick={handleFavorite}>❤️</button>) 
