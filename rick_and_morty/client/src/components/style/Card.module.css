@@ -176,7 +176,7 @@
     transition: transform 0.7s;
     transform: scale(1.2)
 }
-
+/* --- */
 .ligthBox{
     position: fixed;
     inset: 0;

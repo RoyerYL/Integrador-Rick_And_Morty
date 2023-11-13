@@ -14,12 +14,33 @@ const dispatch = useDispatch();
 
 const [isFav,setIsFav]=useState(false)
 
+// document.querySelector(`.${style.heart}`).addEventListener('click',()=>{
+//    console.log("Hola mundo, estamos en un boton");
+// })
+
+ 
+
+ 
+ useEffect(() => {
+   const heartButton = document.querySelector(`.${style.heart}`);
+
+   if (heartButton) {
+      console.log("Hola ->");
+      const containerImg = document.querySelector(`.${style.ligthBox}`);
+      heartButton.addEventListener('click', () => {
+      if (containerImg) {
+         containerImg.addEventListener('click', () => {
+            console.log("Hola mundo");
+           containerImg.classList.add(style.ligthBox);
+         });
+       }
    
-useEffect(() => {
-   myFavorites.forEach((fav) => {
-     if (fav.id === props.id) {
-       setIsFav(true);
-     }
+     });
+   }
+    myFavorites.forEach((fav) => {
+       if (fav.id === props.id) {
+          setIsFav(true);       
+      }
    });
  }, [myFavorites]);
 
@@ -28,9 +49,10 @@ useEffect(() => {
    setIsFav(!isFav);
  };
 
- const containerImg=document.getElementsByClassName(style.ligthBox)
- const imgClass=document.getElementsByClassName(style.containerName)
 
+
+
+ 
 
    return (
       <div className={`${style.card} ${props.clase}`} >
@@ -62,7 +84,7 @@ useEffect(() => {
                </div>
             </div>
 
-            {pathname==HOME_PATH ?
+            {pathname===HOME_PATH ?
             <button className={style.crosButton} onClick={()=>{props.onClose(props.id)}}>❌</button>:
             <p className={style.cros} onClick={()=>{props.onClose(props.id)}}>{props.id}</p>
             }

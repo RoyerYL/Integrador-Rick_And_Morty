@@ -30,21 +30,21 @@ export default (state = initialState, {type,payload}) => {
           };
         }
 
-        case ORDER:
-          let orderedCharacters;
-        
-          if (payload === "A") {
-            orderedCharacters = [...state.myFavorites].sort((a, b) => a.id - b.id);
-          } else {
+    case ORDER:
+      let orderedCharacters;
+
+      if (payload === "A") {
+          orderedCharacters = [...state.myFavorites].sort((a, b) => a.id - b.id);
+        } else {
             orderedCharacters = [...state.myFavorites].sort((a, b) => b.id - a.id);
           }
-        
+
           return {
             ...state,
             myFavorites: orderedCharacters,
           };
-        
     
+
     default:
       return {
           ...state,
