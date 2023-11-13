@@ -176,3 +176,21 @@
     transition: transform 0.7s;
     transform: scale(1.2)
 }
+
+.ligthBox{
+    position: fixed;
+    inset: 0;
+    background-color: aquamarine;
+
+    display: grid;
+    grid-template-columns: 50%;
+    grid-template-rows: 50%;
+    place-content: center;
+
+    transform: translate(-100%);
+    transition: .3s transform;
+}
+
+.show{
+    transform: translate(0);
+}

@@ -28,6 +28,10 @@ useEffect(() => {
    setIsFav(!isFav);
  };
 
+ const containerImg=document.getElementsByClassName(style.ligthBox)
+ const imgClass=document.getElementsByClassName(style.containerName)
+
+
    return (
       <div className={`${style.card} ${props.clase}`} >
          <div className={style.containerName}>
@@ -36,9 +40,9 @@ useEffect(() => {
 
          <div className={style.perfil}>
 
-            <Link to={`/detail/${props.id}`}>      
+            {/* <Link to={`/detail/${props.id}`}>       */}
             <img className={props.status==='Alive'?style.alive:style.dead} src={props.image} alt='' />   
-            </Link>
+            {/* </Link> */}
             <div className={style.containerStatus}>
                <h2 className={style.status}>{props.status}</h2>
             </div>
@@ -67,6 +71,11 @@ useEffect(() => {
             (<button className={style.heart} onClick={handleFavorite}>❤️</button>) 
             :
             (<button className={style.heart} onClick={handleFavorite}>🤍</button>)}
+
+            <div className={style.ligthBox} >
+               <button className={style.btn}>❌</button>
+               <img className={props.status==='Alive'?style.alive:style.dead} src={props.image} alt='' />               
+            </div>
       </div>
 
    );
