@@ -29,6 +29,7 @@ const background =(especie)=>{
 const handleClick =(evento)=>{
 
    document.querySelector('.show-img').src=evento.target.src
+   document.querySelector('html').style.backgroundImage = "url('" + evento.target.src + "')";
 
 }
 
@@ -50,11 +51,11 @@ const home=()=>{
 
  return (
 <div className={style.containerCards}>
-    <div className={style.ligthBox} >
+    {pathname===HOME_PATH && <div className={style.ligthBox} >
                <img className='show-img' src="" alt='' />
               
                <h2></h2>
-            </div>
+            </div>}
  <div className={home()} >
       {
          characters.map((charcter)=>

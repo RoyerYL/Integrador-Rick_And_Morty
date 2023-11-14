@@ -9,8 +9,7 @@
    margin-left: 15px;
    margin-right: 15px;
    position: relative;
-   height: auto;
-   width:1450px;
+
   }
 
 /* Agrega una clase para la animación */
@@ -156,8 +155,8 @@ select:active{
 
  
   background-color: aquamarine;
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 350px;
   display: grid;
   gap: 25px;
   justify-items: center;
@@ -166,6 +165,9 @@ select:active{
 
   transition: .3s transform;
   border: solid 15px white;
+}.ligthBox img{
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -173,4 +175,5 @@ select:active{
 .containerCards{
   display: flex;
   margin-top: 85px;
+
 }
