@@ -156,8 +156,8 @@ select:active{
 
  
   background-color: aquamarine;
-  width: 50%;
-  height: 50%;
+  width: 250px;
+  height: 250px;
   display: grid;
   gap: 25px;
   justify-items: center;
@@ -165,16 +165,10 @@ select:active{
   visibility: visible;
 
   transition: .3s transform;
-  border: solid 1px black;
+  border: solid 15px white;
 }
 
-.show{
-  
- 
-  z-index: 100;
-  visibility: visible;
- 
-}
+
 
 .containerCards{
   display: flex;

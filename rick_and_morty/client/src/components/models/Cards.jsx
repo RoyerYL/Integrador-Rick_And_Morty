@@ -27,14 +27,14 @@ const background =(especie)=>{
 }
 
 const handleClick =(evento)=>{
-   document.querySelector(`.${style.ligthBox}`).classList.remove(style.show)
+
    document.querySelector('.show-img').src=evento.target.src
-   document.querySelector(`.${style.ligthBox}`).classList.add(style.show);
+
 }
 
 const handleClose=()=>{
  
-      document.querySelector(`.${style.ligthBox}`).classList.remove(style.show)
+
    
 }
 
@@ -52,7 +52,7 @@ const home=()=>{
 <div className={style.containerCards}>
     <div className={style.ligthBox} >
                <img className='show-img' src="" alt='' />
-               <button onClick={handleClose} className={style.btn}>❌</button>
+              
                <h2></h2>
             </div>
  <div className={home()} >
