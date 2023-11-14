@@ -29,8 +29,8 @@ const background =(especie)=>{
 const handleClick =(evento)=>{
 
    document.querySelector('.show-img').src=evento.target.src
-   document.querySelector('html').style.backgroundImage = "url('" + evento.target.src + "')";
-
+   document.querySelector('body').style.backgroundImage = "url('" + evento.target.src + "')";
+   
 }
 
 const handleClose=()=>{
