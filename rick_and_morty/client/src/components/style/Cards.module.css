@@ -4,11 +4,13 @@
     flex-wrap: wrap;
     gap: 25px;
     justify-content: center;
-   margin-top: 64px;
+
    padding-top: 25px;
    margin-left: 15px;
    margin-right: 15px;
    position: relative;
+   height: auto;
+   width:1450px;
   }
 
 /* Agrega una clase para la animación */
@@ -147,4 +149,34 @@ select:active{
 .containerFavorites{
   width: 100%;
   height: 100%;
+}
+
+.ligthBox{
+
+
+ 
+  background-color: aquamarine;
+  width: 50%;
+  height: 50%;
+  display: grid;
+  gap: 25px;
+  justify-items: center;
+  place-content: center;
+  visibility: visible;
+
+  transition: .3s transform;
+  border: solid 1px black;
+}
+
+.show{
+  
+ 
+  z-index: 100;
+  visibility: visible;
+ 
+}
+
+.containerCards{
+  display: flex;
+  margin-top: 85px;
 }

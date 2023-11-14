@@ -25,6 +25,19 @@ const background =(especie)=>{
          return style.default;
    }
 }
+
+const handleClick =(evento)=>{
+   document.querySelector(`.${style.ligthBox}`).classList.remove(style.show)
+   document.querySelector('.show-img').src=evento.target.src
+   document.querySelector(`.${style.ligthBox}`).classList.add(style.show);
+}
+
+const handleClose=()=>{
+ 
+      document.querySelector(`.${style.ligthBox}`).classList.remove(style.show)
+   
+}
+
 /**
  * @returns estilo segun el path en el que se encuentre
  */
@@ -35,7 +48,14 @@ const home=()=>{
    return style.cardsPack 
 }
 
- return (<div className={home()} >
+ return (
+<div className={style.containerCards}>
+    <div className={style.ligthBox} >
+               <img className='show-img' src="" alt='' />
+               <button onClick={handleClose} className={style.btn}>❌</button>
+               <h2></h2>
+            </div>
+ <div className={home()} >
       {
          characters.map((charcter)=>
          { return (
@@ -51,12 +71,17 @@ const home=()=>{
                 origin={charcter.origin}
                 image={charcter.image}
                 onClose={onClose}
+                handleClick={handleClick}
               />
             </div>
           )
       })
       }
-      </div>)
+       
+      
+      </div>
+      </div>
+)
    
 
 }

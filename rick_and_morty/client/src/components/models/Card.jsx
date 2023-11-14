@@ -14,29 +14,12 @@ const dispatch = useDispatch();
 
 const [isFav,setIsFav]=useState(false)
 
-// document.querySelector(`.${style.heart}`).addEventListener('click',()=>{
-//    console.log("Hola mundo, estamos en un boton");
-// })
 
  
 
  
  useEffect(() => {
-   const heartButton = document.querySelector(`.${style.heart}`);
 
-   if (heartButton) {
-      console.log("Hola ->");
-      const containerImg = document.querySelector(`.${style.ligthBox}`);
-      heartButton.addEventListener('click', () => {
-      if (containerImg) {
-         containerImg.addEventListener('click', () => {
-            console.log("Hola mundo");
-           containerImg.classList.add(style.ligthBox);
-         });
-       }
-   
-     });
-   }
     myFavorites.forEach((fav) => {
        if (fav.id === props.id) {
           setIsFav(true);       
@@ -47,14 +30,15 @@ const [isFav,setIsFav]=useState(false)
  const handleFavorite = () => {
    isFav ? dispatch(remove_fav(props.id)) : dispatch(add_fav(props));
    setIsFav(!isFav);
- };
+  
 
-
+};
 
 
  
 
    return (
+      <>
       <div className={`${style.card} ${props.clase}`} >
          <div className={style.containerName}>
             <h2 className={style.name}>{props.name}</h2>
@@ -62,9 +46,9 @@ const [isFav,setIsFav]=useState(false)
 
          <div className={style.perfil}>
 
-            {/* <Link to={`/detail/${props.id}`}>       */}
-            <img className={props.status==='Alive'?style.alive:style.dead} src={props.image} alt='' />   
-            {/* </Link> */}
+            
+            <img onClick={props.handleClick} className={props.status==='Alive'?style.alive:style.dead} src={props.image} alt='' />   
+            
             <div className={style.containerStatus}>
                <h2 className={style.status}>{props.status}</h2>
             </div>
@@ -90,15 +74,15 @@ const [isFav,setIsFav]=useState(false)
             }
             
             {isFav?
-            (<button className={style.heart} onClick={handleFavorite}>❤️</button>) 
+            (<button className={`${style.heart} activarLBox`} >❤️</button>) 
             :
             (<button className={style.heart} onClick={handleFavorite}>🤍</button>)}
-
-            <div className={style.ligthBox} >
-               <button className={style.btn}>❌</button>
-               <img className={props.status==='Alive'?style.alive:style.dead} src={props.image} alt='' />               
-            </div>
+            <Link to={`/detail/${props.id}`}>      
+               <button>Detail</button>
+            </Link>
       </div>
+         
+      </>
 
    );
 }

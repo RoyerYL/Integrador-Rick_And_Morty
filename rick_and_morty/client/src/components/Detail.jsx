@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import style from './style/Detail.module.css'
+import { HOME_PATH } from '../paths/paths'
 
 
 export default function  Detail() {
@@ -25,7 +26,7 @@ export default function  Detail() {
    return (
       <div className={style.detail}>
          <div className={style.detailCard}>
-            <Link to={"/home"}>
+            <Link to={HOME_PATH}>
                <button className={style.back}>↩</button>
             </Link>
             <div className={style.divImg}>
