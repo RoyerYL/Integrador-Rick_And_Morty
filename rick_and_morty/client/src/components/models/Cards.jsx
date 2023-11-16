@@ -14,30 +14,20 @@ export default function Cards(props) {
  * @param {*} especie 
  * @returns estilos segun el tipo de especie
  */     
-const background =(especie)=>{
-   switch (especie) {
-      case "Human":
-         return style.human;
-      case "Alien":
+const background =(status)=>{
+   switch (status) {
+      case "Alive":
          return style.alien;
+         
+      case "Dead":
+         return style.default;   
    
       default:
-         return style.default;
+         return style.human;
+         
    }
 }
 
-const handleClick =(evento)=>{
-
-   document.querySelector('.show-img').src=evento.target.src
-   document.querySelector('body').style.backgroundImage = "url('" + evento.target.src + "')";
-   
-}
-
-const handleClose=()=>{
- 
-
-   
-}
 
 /**
  * @returns estilo segun el path en el que se encuentre
@@ -51,11 +41,7 @@ const home=()=>{
 
  return (
 <div className={style.containerCards}>
-    {pathname===HOME_PATH && <div className={style.ligthBox} >
-               <img className='show-img' src="" alt='' />
-              
-               <h2></h2>
-            </div>}
+    
  <div className={home()} >
       {
          characters.map((charcter)=>
@@ -63,7 +49,7 @@ const home=()=>{
             <div  key={charcter.id}>
               <Card
                
-                clase={background(charcter.species)}
+                clase={background(charcter.status)}
                 id={charcter.id}
                 name={charcter.name}
                 status={charcter.status}
@@ -72,7 +58,6 @@ const home=()=>{
                 origin={charcter.origin}
                 image={charcter.image}
                 onClose={onClose}
-                handleClick={handleClick}
               />
             </div>
           )

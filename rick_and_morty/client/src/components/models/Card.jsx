@@ -47,8 +47,10 @@ const [isFav,setIsFav]=useState(false)
          <div className={style.perfil}>
 
             
-            <img onClick={props.handleClick} className={props.status==='Alive'?style.alive:style.dead} src={props.image} alt='' />   
-            
+            <img className={props.status==='Alive'?style.alive:style.dead} src={props.image} alt='' />   
+            <Link to={`/detail/${props.id}`}>      
+               <button className={style.datailButton}>Detail</button>
+            </Link>
             <div className={style.containerStatus}>
                <h2 className={style.status}>{props.status}</h2>
             </div>
@@ -77,9 +79,7 @@ const [isFav,setIsFav]=useState(false)
             (<button className={`${style.heart} activarLBox`} >❤️</button>) 
             :
             (<button className={style.heart} onClick={handleFavorite}>🤍</button>)}
-            <Link to={`/detail/${props.id}`}>      
-               <button>Detail</button>
-            </Link>
+            
       </div>
          
       </>

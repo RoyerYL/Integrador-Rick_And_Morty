@@ -10,10 +10,7 @@
     flex-direction: column;
     align-items: center;
 }
-.containerPacks button{
-    height: 2em;
-    width: 2em;
-}
+
 .containerMapPack{
     display: flex;
     margin-top: 15px;

@@ -1,9 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams,useNavigate  } from 'react-router-dom'
 import style from './style/Detail.module.css'
 import { HOME_PATH } from '../paths/paths'
-
 
 export default function  Detail() {
 
@@ -11,7 +10,10 @@ export default function  Detail() {
     const [character,setCharacter] = useState({})
     const {id} = useParams()
 
+    const navigate = useNavigate();
+
     useEffect(() => {
+      console.log(history);
       axios(`http://localhost:3001/rickandmorty/character/${id}`)
          .then(({ data }) => {
            if (data.name) {
@@ -26,9 +28,9 @@ export default function  Detail() {
    return (
       <div className={style.detail}>
          <div className={style.detailCard}>
-            <Link to={HOME_PATH}>
-               <button className={style.back}>↩</button>
-            </Link>
+            {/* <Link to='/'> */}
+               <button onClick={() => navigate(-1)} className={style.back}>↩</button>
+            {/* </Link> */}
             <div className={style.divImg}>
                <img className={style.imagen} src={character.image} alt='' />   
                <h2 className={style.name}>{character.name}</h2>

@@ -28,3 +28,13 @@
     width: 2em;
     
 }
+@media screen and (max-width: 768px) {
+    /* Estilos para pantallas más pequeñas */
+
+    .nav{
+        flex-direction: column;
+        gap: 25px;
+        overflow: visible;
+        position: relative;
+    }
+}

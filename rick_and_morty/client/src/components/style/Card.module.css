@@ -22,7 +22,7 @@
     transform: scale(1.1);
     border: 2px solid rgb(255, 4, 4);
     box-shadow: 0 0 50px 15px rgba(209, 39, 39, 0.85);
-    background-color: rgba(255, 4, 4, 0.753);
+    /* background-color: rgba(255, 4, 4, 0.753); */
     z-index: 1000; 
 }
 
@@ -39,6 +39,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    position: relative;
 
 }
 
@@ -177,4 +178,9 @@
 }.heart:hover{
     transition: transform 0.7s;
     transform: scale(1.2)
+}
+.datailButton{
+    position: absolute;
+    bottom:  26px;
+    left: 74px;
 }

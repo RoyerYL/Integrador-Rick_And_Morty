@@ -4,7 +4,8 @@
     flex-direction: column;
     height: auto;
     width: 75%;
-    margin-bottom:50px ;
+
     align-items: center;
     gap: 35px;
 }
+

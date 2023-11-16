@@ -1,12 +1,14 @@
 import style from '../style/Nav.module.css'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import SearchBar from './SearchBar'
 import { ABOUT_PATH, CATALOGO_PATH, FAVORITES_PATH, HOME_PATH, LOGIN_PATH, PACKS_PATH } from '../../paths/paths';
 export default function Card(props) {
+   const {pathname} =useLocation();
+
     return (
       
-       <div className={style.nav}>
+      <div className={style.nav}>
          <div className={style.navegacionButtons}>
                
             <Link to={LOGIN_PATH}>
@@ -35,8 +37,10 @@ export default function Card(props) {
             
          </div>
          
+         {pathname===HOME_PATH && 
          <SearchBar onSearch={props.onSearch} ></SearchBar>
-       </div>
+         }       
+      </div>
     );
  }
  
