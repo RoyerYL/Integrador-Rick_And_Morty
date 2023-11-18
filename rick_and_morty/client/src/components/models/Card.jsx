@@ -15,7 +15,13 @@ const dispatch = useDispatch();
 const [isFav,setIsFav]=useState(false)
 
 
- 
+const { id ,
+   name,
+   origin,
+   status,
+   image,
+   species,
+   gender}  =props
 
  
  useEffect(() => {
@@ -28,7 +34,7 @@ const [isFav,setIsFav]=useState(false)
  }, [myFavorites]);
 
  const handleFavorite = () => {
-   isFav ? dispatch(remove_fav(props.id)) : dispatch(add_fav(props));
+   isFav ? dispatch(remove_fav(props.id)) : dispatch(add_fav({id,name,origin:origin.name,status,image,species,gender}  ));
    setIsFav(!isFav);
   
 

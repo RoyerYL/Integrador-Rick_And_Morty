@@ -2,6 +2,7 @@ const express = require('express');
 const {router} =require('./routes/index');
 const server = express();
 
+
 const morgan = require('morgan');
 
 server.use(morgan('dev'))
