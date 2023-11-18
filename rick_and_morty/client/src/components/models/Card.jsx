@@ -63,7 +63,7 @@ const { id ,
          </div>
 
          <div className={style.containerOrigin}>
-            <h2 className={style.origin}>{props.origin?.name}</h2>
+            <h2 className={style.origin}>{props.origin?.name || origin.name}</h2>
          </div>
  
             <div className={style.info}>

@@ -9,7 +9,6 @@ const postFav=async(req ,res)=>{
     }
 
     try {
-        console.log(req.body);
         const [fav,created]=await Favorite.findOrCreate({
             where:{ id ,
                 name,

@@ -5,7 +5,7 @@ const deleteFav= async (req,res)=>{
 
     try {
         if(!id){
-            return res.status(401).jdon({error:"Fañta eñ ID"})
+            return res.status(401).jdon({error:"Falta el ID"})
         }
         
         await Favorite.destroy({
