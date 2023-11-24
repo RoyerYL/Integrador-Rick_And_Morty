@@ -82,7 +82,7 @@ const { id ,
             }
             
             {isFav?
-            (<button className={`${style.heart} activarLBox`} >❤️</button>) 
+            (<button className={`${style.heart} activarLBox`}onClick={handleFavorite} >❤️</button>) 
             :
             (<button className={style.heart} onClick={handleFavorite}>🤍</button>)}
             
